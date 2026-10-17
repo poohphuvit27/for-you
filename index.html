@@ -101,10 +101,11 @@
     .p6{left:4%;   right:auto; top:auto; bottom:6%; --s:.7; flex-direction:row}
   }
 
-  /* one pair sitting in the card's bottom-right corner, on the cream */
+  /* the pair split across the card's bottom corners: golden right, dachshund left */
   .card .perch{right:16px; bottom:12px; --s:.8; opacity:.95; transform-origin:right bottom;
       z-index:0; pointer-events:none; /* the runaway button can land here; keep it tappable */
       filter:drop-shadow(0 2px 3px rgba(46,42,61,.22))}
+  .card .perch.l{left:16px; right:auto; transform-origin:left bottom; animation-delay:1.3s}
   /* the dachshund has something to say; sized in the pair's unscaled space */
   .perch .dg.a{position:relative}
   .say{position:absolute; left:-4px; bottom:calc(100% + 9px);
@@ -281,7 +282,8 @@
   </div>
 
   <div class="foot" id="foot"></div>
-  <div class="pair perch"><i class="dg a"><span class="say">Let&rsquo;s give him<br>a chance!</span></i><i class="dg b"></i></div>
+  <div class="pair perch l"><i class="dg a"><span class="say">Let&rsquo;s give him<br>a chance!</span></i></div>
+  <div class="pair perch" aria-hidden="true"><i class="dg b"></i></div>
 </div>
 
 <script>
